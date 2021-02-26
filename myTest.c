@@ -1,13 +1,12 @@
 #include <GUI.h>
-#include <LCDConf.h>
 #define GUI_TOPLINE     30   
-#define GUI_BCOLOR      GUI_BLACK   //±³¾°É«
-#define GUI_FCOLOR      GUI_YELLOW  //Ç°¾°É«
-#define TORANG_OK       GUI_GREEN   //ºÏ¸ñ
-#define TORANG_NOK      GUI_RED    //²»ºÏ¸ñ
-#define TORANG_HI       GUI_RED    //Æ«¸ß
-#define TORANG_LO       GUI_YELLOW //Æ«µÍ
-#define TORANG_RST      GUI_GRAY   //³õÊ¼×´Ì¬
+#define GUI_BCOLOR      GUI_BLACK   //èƒŒæ™¯è‰²
+#define GUI_FCOLOR      GUI_YELLOW  //å‰æ™¯è‰²
+#define TORANG_OK       GUI_GREEN   //åˆæ ¼
+#define TORANG_NOK      GUI_RED    //ä¸åˆæ ¼
+#define TORANG_HI       GUI_RED    //åé«˜
+#define TORANG_LO       GUI_YELLOW //åä½
+#define TORANG_RST      GUI_GRAY   //åˆå§‹çŠ¶æ€
 typedef enum
 {
 	Region_Wifi=0,
@@ -16,7 +15,7 @@ typedef enum
 	Region_Center,
 	Region_Job,
 	Region_Batch,
-	Region_End//±íÊ¾ÇøÓò¸öÊı
+	Region_End//è¡¨ç¤ºåŒºåŸŸä¸ªæ•°
 
 }RectRegion;
 typedef enum
@@ -64,7 +63,7 @@ void splash()
 	GUI_Delay(500);
 	GUI_ClearRectEx(&rectRegions[Region_Center]);
 	GUI_DispStringInRect("Zero....", &rectRegions[Region_Center], GUI_TA_HCENTER | GUI_TA_VCENTER);
-	//¿ªÊ¼Ğ£×¼£¬Ğ£×¼Íê±ÏÍË³ö£¬½øÈëÖ÷ÆÁÄ»
+	//å¼€å§‹æ ¡å‡†ï¼Œæ ¡å‡†å®Œæ¯•é€€å‡ºï¼Œè¿›å…¥ä¸»å±å¹•
 }
 void drawWifi(WifiLevel Wifix)
 {
@@ -159,7 +158,7 @@ void init()
 	createRegion();
 	
 	//Loading 
-	//µ×²ã
+	//åº•å±‚
 	drawWifi(Wifi4);
 	drawBattery(Battery4);
 	splash();
